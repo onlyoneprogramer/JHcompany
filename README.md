@@ -41,7 +41,7 @@
 
 ## 📫 연락처
 
-- **대표자:** 이진호호 (1인 창업자)  
+- **대표자:** 이진호 (1인 창업자)  
 - **이메일:** dlwlsgh45@naver.com   
 - **GitHub 페이지:** [https://onlyoneprogramer.github.io/portfolio/](https://onlyoneprogramer.github.io/portfolio/)
 
