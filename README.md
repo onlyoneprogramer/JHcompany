@@ -1,61 +1,145 @@
-# 제이에이치컴퍼니 (JH Company)
+# 🛡️ Aegis-OT
+### 산업·에너지 공공데이터 기반 사이버 위협 위험도 분석 플랫폼
 
-> **정보보안 솔루션 개발에 특화된 1인 기술 기반 스타트업**
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white)
 
----
-
-## 🛡️ 회사 개요
-
-제이에이치컴퍼니는 고도화되는 사이버 위협에 대응하기 위한 **차세대 보안 솔루션**을 개발하는 정보보안 전문 스타트업입니다.  
-커널 보안, 하이퍼바이저 기반 모니터링, 백도어 탐지 기술 등 **시스템 내부로 침투하는 위협에 대한 탐지와 방어**를 주요 목표로 합니다.
-
----
-
-## 🔍 주요 기술
-
-- **BPFdoor 대응 보안 프레임워크**
-  - 하이퍼바이저 기반 VMI (Virtual Machine Introspection)
-  - eBPF, 커널 백도어, LSM 탐지 시스템
-  - 이중 모니터링 에이전트 및 자동 격리 복구 기술
-
-- **실시간 커널 무결성 검증**
-  - 커널 구조체 및 시스템 콜 테이블 무결성 검사
-  - 자동 대응 모듈 (프로세스 강제 종료, 커널 복원 등)
+> 산업·에너지 공공데이터와 공개 사이버 위협 데이터를 융합 분석하여  
+> 산업 인프라의 보안 위험도를 예측하는 AI 기반 산업보안 플랫폼
 
 ---
 
-## 💼 주요 사업 영역
+# 📌 Project Overview
 
-- 차세대 백도어 탐지/방어 보안 솔루션 개발  
-- 가상화 기반 시스템 보안 기술 연구  
-- 커널 보안, 시스템 내부 위협 대응 프레임워크 구축
+Aegis-OT는 산업·에너지 공공데이터와 공개 사이버 위협 인텔리전스 데이터를 통합 분석하여 산업 인프라 대상 사이버 위협 위험도를 예측하는 플랫폼입니다.
 
----
-
-## 📦 제품 및 연구 자료
-
-- 📄 [연구 논문: BPFdoor 대응 프레임워크 설계 및 구현](https://github.com/onlyoneprogramer/portfolio/blob/main/bpfdoor/readem.md)  
-- 📝 [기술 개요서 및 기술 요약서](https://github.com/onlyoneprogramer/portfolio/blob/main/bpfdoor/Detailed%20technical%20design.md)  
+산업단지, 스마트공장, 에너지 인프라와 관련된 공공데이터와 CVE 취약점, 악성 IP, 침해사고 데이터를 연계 분석하여 산업군별 위험도를 시각화하고 이상징후를 탐지합니다.
 
 ---
 
-## 📫 연락처
+# 🎯 Project Goals
 
-- **대표자:** 이진호 (1인 창업자)  
-- **이메일:** dlwlsgh45@naver.com   
-- **GitHub 페이지:** [https://onlyoneprogramer.github.io/portfolio/](https://onlyoneprogramer.github.io/portfolio/)
-
----
-
-## 🏗️ 개발환경
-
-- Java / C / C++ / Linux Kernel  
-- KVM, QEMU, Tomcat, GitHub Pages  
-- Visual Studio, IntelliJ, GCC
+- 산업 인프라 대상 사이버 공격 조기 탐지
+- 스마트공장 및 산업단지 보안 강화
+- 산업 공공데이터의 고부가가치 활용
+- 중소 제조기업 보안 사각지대 완화
+- 국가 기반시설 보안 대응력 향상
 
 ---
 
-## ✅ 비전
+# 🏗️ System Architecture
 
-> “가장 은밀한 위협을 가장 먼저 찾아내는 보안 기술”  
-> 제이에이치컴퍼니는 대한민국의 사이버 방어 최전선을 지향합니다.
+```text
+┌───────────────────────────────────────┐
+│     1. 산업·에너지 공공데이터 수집      │
+├───────────────────────────────────────┤
+│ • 산업단지 및 공장 정보               │
+│ • 에너지 수급 데이터                  │
+│ • 스마트공장 관련 데이터              │
+│ • 산업 운영 현황 데이터               │
+└───────────────────────────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│   2. 사이버 위협 인텔리전스 수집       │
+├───────────────────────────────────────┤
+│ • CVE 취약점 데이터                   │
+│ • 악성 IP 및 IOC 데이터               │
+│ • 공개 침해사고 정보                  │
+│ • OSINT 위협 정보                     │
+│ • 보안 뉴스 및 공격 트렌드            │
+└───────────────────────────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│      3. 데이터 통합 및 분석 엔진        │
+├───────────────────────────────────────┤
+│ • 데이터 정규화                       │
+│ • 산업군별 위험도 분석                │
+│ • 취약점 연관 분석                    │
+│ • 공격 패턴 분석                      │
+│ • AI 기반 이상징후 탐지               │
+└───────────────────────────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│      4. 위험도 예측 및 탐지 시스템      │
+├───────────────────────────────────────┤
+│ • 산업 인프라 위험 점수 계산          │
+│ • 악성 행위 탐지                      │
+│ • 공격 증가 추세 분석                 │
+│ • 산업군별 보안 경고                  │
+└───────────────────────────────────────┘
+                    │
+                    ▼
+┌───────────────────────────────────────┐
+│        5. 통합 보안 대시보드           │
+├───────────────────────────────────────┤
+│ • 산업군별 위험도 시각화              │
+│ • 주요 취약점 현황                    │
+│ • 악성 IP 탐지 현황                   │
+│ • 실시간 공격 트렌드                  │
+│ • 공공기관·산업시설 보안 경고         │
+└───────────────────────────────────────┘
+```
+
+---
+
+# ⚡ Key Features
+
+## 📊 산업 공공데이터 수집
+- 전국산업단지및공장정보표준데이터
+- 산업단지 입주업체 현황 데이터
+- 에너지 수급 데이터
+- 산업 운영 현황 데이터
+
+## 🛡️ 사이버 위협 인텔리전스 분석
+- CVE 취약점 데이터
+- 악성 IP 데이터
+- 공개 침해사고 데이터
+- OSINT 기반 위협 인텔리전스
+
+## 🤖 AI 기반 이상징후 탐지
+- 공격 빈도 분석
+- 위험 점수 계산
+- 산업군별 공격 패턴 분석
+- 취약점 위험도 분석
+
+## 📈 실시간 통합 대시보드
+- 산업군별 위험도 시각화
+- 주요 취약점 현황
+- 악성 IP 탐지 현황
+- 공격 트렌드 분석
+- 실시간 보안 경고
+
+---
+
+# 🧠 Core Technologies
+
+| Category | Stack |
+|---|---|
+| Backend | Python, FastAPI |
+| Frontend | React |
+| Database | PostgreSQL, Elasticsearch |
+| Data Analysis | Pandas, NumPy |
+| AI/ML | Scikit-learn |
+| Threat Intelligence | CVE, IOC, OSINT |
+
+---
+
+# 🚀 Future Expansion
+
+- AI 기반 실시간 위협 예측
+- 산업보안 특화 EDR 연계
+- OT/ICS 로그 분석
+- 국가 기반시설 위험도 모델링
+- 산업보안 SaaS 플랫폼화
+
+---
+
+# 📄 License
+
+MIT License
